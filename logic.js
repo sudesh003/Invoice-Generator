@@ -90,6 +90,7 @@ function deleteRow() {
 
 }
 
+let bill=1;
 function createPDF() {
   let doc = new jsPDF();
   let table = document.getElementById("mytable");
@@ -117,7 +118,8 @@ const date = new Date();
 doc.text(`Date: ${date.toLocaleDateString()}`, 150, 20);
 doc.text(`Time: ${date.toLocaleTimeString()}`, 150, 25);
 doc.text('Place: India', 150, 30);
-
+doc.text('Bill No. '+bill,20,20);
+bill++;
 // Draw a horizontal line to separate the header from the content
 doc.setLineWidth(0.5);
 doc.line(20, 40, doc.internal.pageSize.width - 20, 40);
