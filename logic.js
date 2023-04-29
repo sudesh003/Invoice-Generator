@@ -14,7 +14,7 @@ function calculateTotal() {
 
   return total;
 }
-
+let cnt=1 // serial number
 function addRow() {
   // Get the table body element in which you want to add row
   let table = document.getElementById("tablebody");
@@ -23,7 +23,6 @@ function addRow() {
   let row = document.createElement("tr")
 
   // get the values entered in the form
-  let sl = document.getElementById("serial_number").value;
   let date = document.getElementById("date").value;
   let consignee = document.getElementById("Consignee").value;
   let weight = document.getElementById("Weight").value;
@@ -34,7 +33,7 @@ function addRow() {
   // Create cells
   let c1 = document.createElement("td")
   c1.contentEditable = true;
-  c1.innerHTML = sl;
+  c1.innerHTML = cnt++;
   let c2 = document.createElement("td")
   c2.contentEditable = true;
   c2.innerHTML = date;
@@ -80,6 +79,7 @@ function deleteRow() {
   // Delete the last row
   if (rowCount > 0) {
     elmtTable.deleteRow(rowCount - 1);
+    cnt--;
   }
 
   // Call the calculateTotal() function to get the total amount
@@ -101,29 +101,42 @@ function createPDF() {
   // Update the text content of the last td element with the total amount
   document.getElementById("total-amount").textContent = totalAmount;
 
-  // Set the styling options for the entire table
-  doc.setFontSize(14);
-  doc.setFontStyle("bold");
-  doc.setTextColor(0, 0, 0); // black text
-  doc.setFillColor(255, 255, 255); // white background
-  doc.setDrawColor(0, 0, 0); // black borders
-  doc.setLineWidth(1);
+  // Set the font size and style
+doc.setFontSize(18);
+doc.setFontStyle('bold');
 
-  // Set the styling options for the header row
-  doc.setDrawColor(0, 0, 0);
-  doc.setFillColor(0, 0, 0); // black background
-  doc.setTextColor(255, 255, 255); // white text
-  doc.setFontStyle("bold");
+// Add the headline
+doc.text('INVOICE', 90, 10);
+
+// Set the font size and style for the remaining text
+doc.setFontSize(12);
+doc.setFontStyle('normal');
+
+// Add the date, time, and place
+const date = new Date();
+doc.text(`Date: ${date.toLocaleDateString()}`, 150, 20);
+doc.text(`Time: ${date.toLocaleTimeString()}`, 150, 25);
+doc.text('Place: India', 150, 30);
+
+// Draw a horizontal line to separate the header from the content
+doc.setLineWidth(0.5);
+doc.line(20, 40, doc.internal.pageSize.width - 20, 40);
 
   doc.autoTable({
-    html: "#" + table.id,
-    startY: 20,
+    html: '#' + table.id,
+    startY: 50,
     headStyles: {
-      fillColor: [0, 0, 0],
-      textColor: [255, 255, 255],
-      lineColor: [255, 255, 255], // set line color to white
+      fillColor: [255, 255, 255],
+      textColor: [0, 0, 0],
+      lineColor: [0, 0, 0],
       lineWidth: 0.5,
-      fontStyle: "bold",
+      fontStyle: 'bold'
+    },
+    bodyStyles: {
+      fillColor: [255, 255, 255],
+      textColor: [0, 0, 0],
+      lineColor: [0, 0, 0],
+      lineWidth: 0.5,
     },
     didDrawCell: (data) => {
       // Draw borders around each cell
@@ -137,13 +150,16 @@ function createPDF() {
       );
     },
     footStyles: {
-      fillColor: [0, 0, 0],
-      textColor: [255, 255, 255],
-      lineColor: [255, 255, 255], // set line color to white
+      fillColor: [255, 255, 255],
+      textColor: [0, 0, 0],
+      lineColor: [0, 0, 0],
       lineWidth: 0.5,
-      fontStyle: "bold",
+      fontStyle: 'bold'
     },
   });
+
+  // Add the seal and signature column
+  doc.text('Seal & Signature', 20, 280);
 
   // Save the PDF
   doc.save("table.pdf");
