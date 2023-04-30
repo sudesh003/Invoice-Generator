@@ -52,11 +52,13 @@
     form input[type=number] {
         /* width: 10% !important; */
         /* take full width */
+        font-size: .9rem;
         margin-bottom: 0.5rem;
         /* add some margin between inputs */
     }
 
     form input[type=button] {
+        font-size: .9rem;
         margin-top: 1rem;
     }
 
