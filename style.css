@@ -63,7 +63,7 @@
     form input[type=button] {
         width: 8%;
         margin-top: 1rem;
-        margin-left: 6.5rem;
+        margin-left: 7rem;
         border-radius: 5px;
         background-color: white;
         border: none;
@@ -115,7 +115,7 @@
         bottom: 0;
         right: 0;
         margin: 2vh;
-        margin-left: 32vw;
+        margin-left: 35vw;
     }
 
     .button-container button {
@@ -190,7 +190,7 @@
 
 
 
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width:769px) {
 
     * {
         margin: 0;
