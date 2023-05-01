@@ -240,13 +240,14 @@
         height: 3vh;
         /* adjust the value as per your requirement */
         font-size: 1.2rem;
+        margin-right: 2vw;
     }
 
     form input[type=button] {
         background-color: white;
         border: none;
         color: black;
-        padding: .50vh 1vw;
+        padding: .80vh 1vw;
         text-align: center;
         text-decoration: none;
         display: inline-block;
