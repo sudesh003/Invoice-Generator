@@ -143,35 +143,6 @@
         color: #ffffff;
     }
 
-    thead th:nth-child(1) {
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(2) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(3) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(4) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(5) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(6) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
 }
 
 
@@ -321,34 +292,4 @@
         background-color: #000000;
         color: #ffffff;
     }
-
-    thead th:nth-child(1) {
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(2) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(3) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(4) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(5) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
-    thead th:nth-child(6) {
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-    }
-
 }
