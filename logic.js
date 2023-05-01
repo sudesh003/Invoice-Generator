@@ -161,5 +161,5 @@ doc.line(20, 40, doc.internal.pageSize.width - 20, 40);
   doc.text('Seal & Signature', 20, 280);
 
   // Save the PDF
-  doc.save("table.pdf");
+  doc.save("invoice.pdf");
 }
