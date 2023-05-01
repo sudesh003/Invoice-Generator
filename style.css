@@ -42,7 +42,7 @@
     }
     
     form > input,label {
-        flex-basis: 50%;
+        flex-basis: 40%;
         padding: 0 15px;
         box-sizing: border-box;
     }
@@ -52,20 +52,18 @@
     form input[type=number] {
         /* width: 10% !important; */
         /* take full width */
-        font-size: .9rem;
-        margin-bottom: 0.5rem;
+        font-size: 0.99rem;
+        margin-bottom: 0.8rem;
         /* add some margin between inputs */
     }
-
-    form input[type=button] {
-        font-size: .9rem;
-        margin-top: 1rem;
+    form label{
+        font-size: 1.35rem;
     }
 
     form input[type=button] {
         width: 8%;
-        margin-top: 1rem;
-        margin-left: 7rem;
+        margin-top: 2.5rem;
+        margin-left: 8rem;
         border-radius: 5px;
         background-color: white;
         border: none;
@@ -74,7 +72,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 1.0rem;
+        font-size: 1.3rem;
         cursor: pointer;
       }
 
@@ -92,7 +90,7 @@
 
     th {
         height: 5vh;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     td {
@@ -117,7 +115,7 @@
         bottom: 0;
         right: 0;
         margin: 2vh;
-        margin-left: 35vw;
+        margin-left: 40vw;
     }
 
     .button-container button {
