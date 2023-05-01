@@ -23,7 +23,6 @@ function addRow() {
   let row = document.createElement("tr")
 
   // get the values entered in the form
-  let date = document.getElementById("date").value;
   let consignee = document.getElementById("Consignee").value;
   let weight = document.getElementById("Weight").value;
   let amount = document.getElementById("Amount").value;
@@ -32,11 +31,10 @@ function addRow() {
 
   // Create cells
   let c1 = document.createElement("td")
-  c1.contentEditable = true;
   c1.innerHTML = cnt++;
+  let today=new Date();
   let c2 = document.createElement("td")
-  c2.contentEditable = true;
-  c2.innerHTML = date;
+  c2.innerHTML =today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
   let c3 = document.createElement("td")
   c3.contentEditable = true;
   c3.innerHTML = consignee;
@@ -115,7 +113,6 @@ doc.setFontStyle('normal');
 
 // Add the date, time, and place
 const date = new Date();
-doc.text(`Date: ${date.toLocaleDateString()}`, 150, 20);
 doc.text(`Time: ${date.toLocaleTimeString()}`, 150, 25);
 doc.text('Place: India', 150, 30);
 doc.text('Bill No. '+bill,20,20);
@@ -164,5 +161,5 @@ doc.line(20, 40, doc.internal.pageSize.width - 20, 40);
   doc.text('Seal & Signature', 20, 280);
 
   // Save the PDF
-  doc.save("invoice.pdf");
+  doc.save("table.pdf");
 }
